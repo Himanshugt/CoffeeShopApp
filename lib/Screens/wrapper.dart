@@ -1,12 +1,19 @@
-import 'package:coffeeshopapp/Home/homepage.dart';
+
 import 'package:coffeeshopapp/Screens/Authenticate/sign_in_anon.dart';
+import 'package:coffeeshopapp/models/My_User.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Wrapper extends StatelessWidget {
-  const Wrapper({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
+
+    final user=Provider.of<MyUser>(context);
+    print(user);
+
     return SignIn();
   }
 }

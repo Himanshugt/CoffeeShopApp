@@ -1,30 +1,29 @@
 // @dart=2.9
 
-import 'package:coffeeshopapp/models/user.dart';
+import 'package:coffeeshopapp/models/My_User.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 class AuthService{
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   //create user obj based on FirebaseUser
-  User _userFromFireBaseUser(FirebaseUser user){
-    return user != null ? User(uid: user.uid) : null;
+  MyUser _userFromFireBaseUser(User user){
+    return user != null ? MyUser(uid: user.uid) : null;
   }
 
   //auth change user stream
-
-  Stream<User> get user{
-    return _auth.onAuthStateChanged
+  Stream<MyUser> get stuser{
+    return _auth.authStateChanges()
         .map(_userFromFireBaseUser);
   }
+
 
   //sign in anon
   Future signInAnon() async{
     try{
-      AuthResult result=await _auth.signInAnonymously();
-      FirebaseUser user=result.user;
+      UserCredential result=await _auth.signInAnonymously();
+      User user=result.user;
       return _userFromFireBaseUser(user);
     }catch(e){
       print(e.toString());
