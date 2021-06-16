@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Favorite.dart';
 import 'carddetails.dart';
 import 'coffeecard.dart';
 
@@ -119,6 +120,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: IconButton(
               onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>favorite()));
               },
               icon: Icon(
                 Icons.favorite_border,
