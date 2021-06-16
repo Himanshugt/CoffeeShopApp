@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'carddetails.dart';
+import '../carddetails.dart';
 
 class CoffeeCard extends StatefulWidget {
   CardDetails details=new CardDetails('', '', '', 0.00);
