@@ -1,3 +1,4 @@
+import 'package:coffeeshopapp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:coffeeshopapp/carddetails.dart';
 import 'package:coffeeshopapp/Home/coffeecard.dart';
@@ -20,15 +21,29 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
-
-
+  AuthService _auth=AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.00,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.logout,
+              color: Colors.orange[400],
+            ),
+            onPressed: () async {
+              return await _auth.signOut();
+            },
+          )
+        ],
+      ),
 
-        padding: EdgeInsets.only(left: 20,top: 75,right: 20),
+      body: ListView(
+        padding: EdgeInsets.only(left: 20,top: 95,right: 20),
         children: [
           Row(
             children: [
