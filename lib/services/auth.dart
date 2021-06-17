@@ -2,15 +2,36 @@
 
 import 'package:coffeeshopapp/models/My_User.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService{
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  final GoogleSignIn _googleUser=GoogleSignIn();
+
+  //google sign in
+  Future googleSignIn() async{
+    try{
+      GoogleSignInAccount _googleAuth=await _googleUser.signIn();
+      GoogleSignInAuthentication authenticationUser = await _googleAuth.authentication;
+      OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: authenticationUser.accessToken,
+        idToken: authenticationUser.idToken,
+      );
+      UserCredential  result= await _auth.signInWithCredential(credential);
+      User user=result.user;
+      return _userFromFireBaseUser(user);
+    }catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
 
   //create user obj based on FirebaseUser
   MyUser _userFromFireBaseUser(User user){
     return user != null ? MyUser(uid: user.uid) : null;
   }
+
 
   //auth change user stream
   Stream<MyUser> get stuser{

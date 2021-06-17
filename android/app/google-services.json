@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "796070703324-8tgmm3883jvjbc95fa94pd1kfr8hdg71.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.himanshugt.coffeeshopapp",
+            "certificate_hash": "00a3be7c15ca33e40402559b567cff7250464fee"
+          }
+        },
+        {
           "client_id": "796070703324-5btoqq4fcgn90qfe9jsf0msgu4pet5in.apps.googleusercontent.com",
           "client_type": 3
         }

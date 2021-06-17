@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:coffeeshopapp/services/auth.dart';
+import 'package:coffeeshopapp/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 
@@ -42,14 +43,14 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
           )
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+      body: Container(20
         child: Form(
           key: _formKey,
           child: Column(
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: textInputDecoration.copyWith(hintText: 'Email'),
                 validator: (val) => val.isEmpty ? 'Enter an email' : null,
                 onChanged: (val) {
                   setState(() => email = val);
@@ -57,6 +58,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: textInputDecoration.copyWith(hintText: 'Password'),
                 validator: (val) => val.length < 6 ? 'Enter a password 6+ chars long' : null,
                 obscureText: true,
                 onChanged: (val) {
