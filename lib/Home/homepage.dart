@@ -2,7 +2,7 @@ import 'package:coffeeshopapp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:coffeeshopapp/carddetails.dart';
 import 'package:coffeeshopapp/Home/coffeecard.dart';
-import 'package:coffeeshopapp/Favorite.dart';
+import 'package:coffeeshopapp/Screens/Favorite/Favorite.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: Text(
-                  'Welcome, Nadia',
+                  'Welcome, Joey',
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   width: 50,
                   child: CircleAvatar(
                       radius: 20,
-                      backgroundImage: NetworkImage('https://static.wikia.nocookie.net/friends/images/4/48/Chandler_Bing_portrait.jpg/revision/latest/scale-to-width-down/350?cb=20100601130820')
+                      backgroundImage: NetworkImage('https://i.ytimg.com/vi/wR6xCtxM308/maxresdefault.jpg')
                   )
               ),
             ],

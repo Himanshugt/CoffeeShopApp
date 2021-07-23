@@ -88,7 +88,8 @@ class _CoffeeCardState extends State<CoffeeCard> {
                                       widget.details.isFavorite=!widget.details.isFavorite;
                                     },
                                     icon:Icon(
-                                        Icons.favorite_border)),
+                                        Icons.favorite_border)
+                                ),
                               ],
                             )
                           ],
