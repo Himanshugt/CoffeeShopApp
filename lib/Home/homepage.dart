@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[50],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(
               Icons.logout,
-              color: Colors.orange[400],
+              color: Colors.brown[900],
             ),
             onPressed: () async {
               return await _auth.signOut();
@@ -45,14 +46,16 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         padding: EdgeInsets.only(left: 20,top: 95,right: 20),
         children: [
+          SizedBox(height: 50),
           Row(
             children: [
               Expanded(
                 child: Text(
-                  'Welcome, Joey',
+                  'Welcome, Joey !',
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
+                    color: Colors.brown[900],
                   ),
                 ),
               ),
@@ -73,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                   "Let's select the best taste for your next coffee break!",
                   style: TextStyle(
                       fontSize: 17.0,
-                      color: Colors.grey,
+                      color: Colors.brown[400],
                       fontWeight: FontWeight.w500
                   ),
                 ),
@@ -81,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(width:85)
             ],
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 30),
           Row(
             children: [
               Expanded(
@@ -90,6 +93,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
+                    color: Colors.brown[900],
                   ),
                 ),
               ),
@@ -108,21 +112,36 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: HomePage.cardList.map((details) => CoffeeCard(details)).toList(),
             ),
-          )
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Today\'s Special',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.brown[900],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Center(child: CoffeeCard(HomePage.cardList[0]))
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-                Icons.home_outlined
+                Icons.home
             ),
             label: 'Home',
-            backgroundColor: Colors.orange[600],
+            backgroundColor: Colors.brown[200],
           ),
           BottomNavigationBarItem(
             icon: Icon(
-                Icons.coffee
+                Icons.coffee_outlined
             ),
             label: 'Orders',
             backgroundColor: Colors.purpleAccent,
@@ -141,7 +160,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-                Icons.person
+                Icons.person_outline
             ),
             label: 'Profile',
             backgroundColor: Colors.cyan,

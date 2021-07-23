@@ -43,7 +43,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                   child: Container(
                       height: 5*MediaQuery.of(context).size.height/24,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.blue,
+                      color: Colors.brown[200],
 
                       child: ListView(
                         children: [
@@ -71,7 +71,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                                   child: Icon(
                                     Icons.coffee_sharp,
                                     size: 70,
-                                    color: Colors.indigo,
+                                    color: Colors.brown[900],
                                   ),
                                 ),
                               ],
@@ -97,7 +97,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.indigo,
+                            color: Colors.brown[900],
                             blurRadius: 5,
                             spreadRadius: 2
                         )
@@ -118,7 +118,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 17,
-                                  color: Colors.blue,
+                                  color: Colors.brown[500],
                                   letterSpacing: 1.2,
                                   shadows:[
                                     BoxShadow(
@@ -143,7 +143,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 17,
-                                  color: Colors.blue,
+                                  color: Colors.brown[500],
                                   letterSpacing: 1.2,
                                   shadows:[
                                     BoxShadow(
@@ -168,7 +168,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 17,
-                                  color: Colors.blue,
+                                  color: Colors.brown[500],
                                   letterSpacing: 1.2,
                                   shadows:[
                                     BoxShadow(
@@ -202,7 +202,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                                       ),
                                     ),
                                   ),
-                                  color: Colors.indigo,
+                                  color: Colors.brown[900],
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                                   onPressed: () async {
                                     if(_formKey.currentState.validate()){
@@ -228,7 +228,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 19,
-                                    color: Colors.blue,
+                                    color: Colors.brown[200],
                                     shadows:[
                                       BoxShadow(
                                           color: Colors.indigo,
@@ -248,7 +248,7 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.w700,
                                       fontSize: 21,
-                                      color: Colors.indigo,
+                                      color: Colors.brown[900],
                                       shadows:[
                                         BoxShadow(
                                             color: Colors.indigo,
@@ -272,6 +272,6 @@ class _RegisterWithEmailState extends State<RegisterWithEmail> {
           )
         ],
       ),
-    );;
+    );
   }
 }

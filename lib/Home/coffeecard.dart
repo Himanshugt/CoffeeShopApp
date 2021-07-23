@@ -1,3 +1,4 @@
+import 'package:coffeeshopapp/Screens/OrderNow/orderNow.dart';
 import 'package:flutter/material.dart';
 import '../carddetails.dart';
 
@@ -20,7 +21,7 @@ class _CoffeeCardState extends State<CoffeeCard> {
       child: Stack(
         children: [
           Container(
-            height: 400,
+            height: 365,
             width: 210,
             child: Column(
               children: [
@@ -31,7 +32,7 @@ class _CoffeeCardState extends State<CoffeeCard> {
                   width: 220,
                   child: Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.0)),
-                    color: Colors.orange[300],
+                    color: Colors.brown[200],
                     child: Padding(
                         padding: EdgeInsets.only(left: 15,right: 15),
                         child: Column(
@@ -77,8 +78,8 @@ class _CoffeeCardState extends State<CoffeeCard> {
                                     '\$${widget.details.price}',
                                     style: TextStyle(
                                         fontSize: 24,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.brown[900],
                                         letterSpacing: 1
                                     ),
                                   ),
@@ -88,7 +89,9 @@ class _CoffeeCardState extends State<CoffeeCard> {
                                       widget.details.isFavorite=!widget.details.isFavorite;
                                     },
                                     icon:Icon(
-                                        Icons.favorite_border)
+                                      Icons.favorite_border,
+                                      size: 30,
+                                    )
                                 ),
                               ],
                             )
@@ -101,8 +104,9 @@ class _CoffeeCardState extends State<CoffeeCard> {
                   width: 210,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                    color: Colors.black54,
+                    color: Colors.brown[900],
                     onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>orderNow()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical:10),
@@ -126,7 +130,7 @@ class _CoffeeCardState extends State<CoffeeCard> {
                   width: 125,
                   child:CircleAvatar(
                       radius: 20,
-                      backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-uLtBdNEVg70Dm23eUe_uuyAqbCGhpyS2g&usqp=CAU')
+                      backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BPKzUAxMUoZoSZm7Wdw-vlYvDSUSnJyEUKOz8qO965M4TBtRGhjlAStVjVsM5j_xCDU&usqp=CAU')
                   )
                 //Image(
                 //image: NetworkImage('),

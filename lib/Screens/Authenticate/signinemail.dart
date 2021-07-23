@@ -41,7 +41,7 @@ class _SignInEmailState extends State<SignInEmail> {
                   child: Container(
                       height: 5*MediaQuery.of(context).size.height/24,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.blue,
+                      color: Colors.brown[200],
 
                       child: ListView(
                         children: [
@@ -67,7 +67,7 @@ class _SignInEmailState extends State<SignInEmail> {
                                 Icon(
                                   Icons.coffee_sharp,
                                   size: 70,
-                                  color: Colors.indigo,
+                                  color: Colors.brown[900],
                                 ),
                                 // Container(
                                 //   height: 100,
@@ -107,7 +107,7 @@ class _SignInEmailState extends State<SignInEmail> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.indigo,
+                            color: Colors.brown[900],
                             blurRadius: 5,
                             spreadRadius: 2
                         )
@@ -128,7 +128,7 @@ class _SignInEmailState extends State<SignInEmail> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 17,
-                                  color: Colors.blue,
+                                  color: Colors.brown[500],
                                   letterSpacing: 1.2,
                                   shadows:[
                                     BoxShadow(
@@ -153,7 +153,7 @@ class _SignInEmailState extends State<SignInEmail> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 17,
-                                  color: Colors.blue,
+                                  color: Colors.brown[500],
                                   letterSpacing: 1.2,
                                   shadows:[
                                     BoxShadow(
@@ -187,7 +187,7 @@ class _SignInEmailState extends State<SignInEmail> {
                                       ),
                                     ),
                                   ),
-                                  color: Colors.indigo,
+                                  color: Colors.brown[900],
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                                   onPressed: () async {
                                       if(_formKey.currentState.validate()){
@@ -222,7 +222,7 @@ class _SignInEmailState extends State<SignInEmail> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 18,
-                                      color: Colors.indigo,
+                                      color: Colors.brown[900],
                                       letterSpacing: 1.2,
                                       shadows:[
                                         BoxShadow(

@@ -12,6 +12,7 @@ class favorite extends StatelessWidget {
               'Favorite'
           ),
           centerTitle: true,
+          backgroundColor: Colors.brown[200],
         ),
         body: ListView(
           children: HomePage.cardList.map((details){
