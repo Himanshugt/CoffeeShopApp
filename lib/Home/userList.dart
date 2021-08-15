@@ -2,6 +2,8 @@ import 'package:coffeeshopapp/models/userdatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'userTile.dart';
+
 class UserList extends StatefulWidget {
   const UserList({Key? key}) : super(key: key);
 
@@ -14,13 +16,18 @@ class _UserListState extends State<UserList> {
 
   Widget build(BuildContext context) {
 
-    final users=Provider.of<List<UserData>>(context);
+    final user=Provider.of<List<UserData>>(context);
 
-    users.forEach((e) {
+    user.forEach((e) {
       print(e.name);
       print(e.sugars);
       print(e.strength);
     });
-    return Container();
+    return ListView.builder(
+      itemCount: user.length,
+      itemBuilder: (context,index){
+        return UserTile(user: user[index]);
+      }
+    );
   }
 }
