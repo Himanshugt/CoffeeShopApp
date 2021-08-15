@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:coffeeshopapp/services/auth.dart';
+import 'package:coffeeshopapp/services/database.dart';
 import 'package:coffeeshopapp/shared/constants.dart';
 import 'package:flutter/material.dart';
 

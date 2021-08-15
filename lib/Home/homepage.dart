@@ -1,3 +1,4 @@
+import 'package:coffeeshopapp/Screens/Profile.dart';
 import 'package:coffeeshopapp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:coffeeshopapp/carddetails.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 
   @override
   _HomePageState createState() => _HomePageState();
+  
 }
 
 class _HomePageState extends State<HomePage> {
@@ -159,8 +161,13 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.pinkAccent,
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-                Icons.person_outline
+            icon: IconButton(
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>profile()));
+              },
+              icon: Icon(
+                  Icons.person_outline
+              ),
             ),
             label: 'Profile',
             backgroundColor: Colors.cyan,

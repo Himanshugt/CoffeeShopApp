@@ -1,31 +1,12 @@
 // @dart=2.9
 
 import 'package:coffeeshopapp/models/My_User.dart';
+import 'package:coffeeshopapp/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService{
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
-  final GoogleSignIn _googleUser=GoogleSignIn();
-
-  //google sign in
-  Future googleSignIn() async{
-    try{
-      GoogleSignInAccount _googleAuth=await _googleUser.signIn();
-      GoogleSignInAuthentication authenticationUser = await _googleAuth.authentication;
-      OAuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: authenticationUser.accessToken,
-        idToken: authenticationUser.idToken,
-      );
-      UserCredential  result= await _auth.signInWithCredential(credential);
-      User user=result.user;
-      return _userFromFireBaseUser(user);
-    }catch(e){
-      print(e.toString());
-      return null;
-    }
-  }
 
   //create user obj based on FirebaseUser
   MyUser _userFromFireBaseUser(User user){
@@ -68,6 +49,10 @@ class AuthService{
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User user = result.user;
+
+      //create a new doc for the user with the uid
+      await DatabaseService(uid: user.uid).updateName('0','new user',100);
+
       return _userFromFireBaseUser(user);
     } catch (error) {
       print(error.toString());
