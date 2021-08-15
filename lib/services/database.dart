@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coffeeshopapp/models/userdatabase.dart';
 
 class DatabaseService{
 
@@ -17,8 +18,20 @@ class DatabaseService{
     });
   }
 
-  Stream<QuerySnapshot> get users {
-    return userDetails.snapshots();
+  //userdata list from snapshot
+  List<UserData> _userListFromSnapshot(QuerySnapshot snapshot){
+    return snapshot.docs.map((doc){
+      return UserData(
+        name: doc.get('name'),
+        strength: doc.get('strength'),
+        sugars: doc.get('sugars'),
+      );
+    }).toList();
+  }
+
+  Stream<List<UserData>> get users {
+    return userDetails.snapshots()
+      .map(_userListFromSnapshot);
   }
 
 }

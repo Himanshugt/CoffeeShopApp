@@ -1,6 +1,6 @@
+import 'package:coffeeshopapp/models/userdatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserList extends StatefulWidget {
   const UserList({Key? key}) : super(key: key);
@@ -14,11 +14,13 @@ class _UserListState extends State<UserList> {
 
   Widget build(BuildContext context) {
 
-    final user=Provider.of<QuerySnapshot>(context);
+    final users=Provider.of<List<UserData>>(context);
 
-    for(var doc in user.docs){
-      print(doc.data());
-    }
+    users.forEach((e) {
+      print(e.name);
+      print(e.sugars);
+      print(e.strength);
+    });
     return Container();
   }
 }
